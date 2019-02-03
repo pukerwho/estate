@@ -23,26 +23,15 @@ if( !isset( $content_width ) ) {
     // @TODO : edit the value for your own specifications
     $content_width = 960;
 }
-// Register menus, use wp_nav_menu() to display menu to your template ( cf : http://codex.wordpress.org/Function_Reference/wp_nav_menu )
+
+require_once get_template_directory() . '/inc/carbon-fields/carbon-fields-plugin.php';
+require_once get_template_directory() . '/inc/custom-fields/settings-meta.php';
+require_once get_template_directory() . '/inc/custom-fields/apartments-meta.php';
+
 register_nav_menus( array(
-    'main_menu' => __( 'Menu principal', 'minimal-blank-theme' ) //@TODO : change i18n domain name to yours
+    'head_menu' => 'Меню в шапке',
 ) );
-// Register sidebars
-function registerThemeSidebars() {
-    if( !function_exists( 'register_sidebar' ) ) {
-        return;
-    }
-    register_sidebar( array(
-        'name' => 'Main sidebar',
-        'id' => 'main-sidebar',
-        'description' => '',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
-}
-add_action( 'widgets_init', 'registerThemeSidebars' );
+
 function addAdminEditorStyle() {
     add_editor_style( get_stylesheet_directory_uri() . 'css/editor-style.css' );
 };
@@ -51,17 +40,6 @@ add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
 function theme_name_scripts() {
     wp_enqueue_style( 'editor-style', get_stylesheet_directory_uri() . '/css/style.css', false, time() );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js');
-    wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
- 
-
-    wp_localize_script( 'loadmore', 'loadmore_params', array(
-        'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', 
-        'posts' => json_encode( $wp_query->query_vars ), 
-        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-        'max_page' => $wp_query->max_num_pages
-    ) );
- 
-    wp_enqueue_script( 'loadmore' );
 };
 
 //подключаем стили к админке
@@ -71,45 +49,19 @@ function load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
-function loadmore_ajax_handler(){
- 
-    // prepare our arguments for the query
-    $args = json_decode( stripslashes( $_POST['query'] ), true );
-    $args['paged'] = $_POST['page'] + 1; 
-    $args['post_status'] = 'publish';
- 
-   
-    query_posts( $args );
- 
-    if( have_posts() ) :
- 
-        
-        while( have_posts() ): the_post();
-            get_template_part( 'blocks/default/loop', 'default' );
-        
-        endwhile;
- 
-    endif;
-    die; 
+
+function create_post_type() {
+    register_post_type( 'apartments',
+        array(
+          'labels' => array(
+            'name' => __( 'Apartments' ),
+            'singular_name' => __( 'Apartment' )
+          ),
+          'public' => true,
+          'has_archive' => true,
+          'hierarchical' => true,
+          'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+        )
+    );
 }
-
-add_action('wp_ajax_loadmore', 'loadmore_ajax_handler'); 
-add_action('wp_ajax_nopriv_loadmore', 'loadmore_ajax_handler'); 
-
-
-function add_theme_menu_item() {
-    add_menu_page("Theme Settings", "Theme Settings", "manage_options", "theme-settings", "theme_settings_page", null, 99);
-    //register our settings
-    register_setting( 'my-settings-group', 'facebook_link' );
-    register_setting( 'my-settings-group', 'twitter_link' );
-    register_setting( 'my-settings-group', 'google_link' );
-    register_setting( 'my-settings-group', 'pinterest_link' );
-    register_setting( 'my-settings-group', 'google_analytics' );
-    register_setting( 'my-settings-group', 'jivosite_code' );
-}
-
-add_action("admin_menu", "add_theme_menu_item");
-
-function theme_settings_page() {
-    include 'form-file.php';
-}
+add_action( 'init', 'create_post_type' );
