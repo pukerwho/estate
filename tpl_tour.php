@@ -49,8 +49,9 @@ Template Name: Бесплатный тур
 								</div>
 							<?php endforeach; ?>
 						</div>
-						<div>
-						<div class="p_tour__more">
+
+					</div>
+					<div class="p_tour__more">
 							<div class="p_tour__more__heading">
 								<?php _e('Хотите получить более детальную информацию о ') ?>
 								<span><?php _e('бесплатной обзорной поездке в Болгарию?') ?></span>
@@ -62,8 +63,6 @@ Template Name: Бесплатный тур
 								<?php _e('Индивидуальная консультация') ?>
 							</div>
 						</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
