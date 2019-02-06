@@ -9229,7 +9229,7 @@ a {
   .b_slider .lSGallery li {
     height: 145px; }
   .b_slider .lSGallery img {
-    height: 100%; }
+    height: 100% !important; }
   .b_slider ul {
     height: 100%;
     list-style: none outside none;
