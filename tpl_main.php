@@ -13,7 +13,7 @@ Template Name: Main
 	<?php get_template_part('blocks/filter/b_filter') ?>	
 </section>
 <section id="b_apartments">
-	<?php get_template_part('blocks/apartments/b_apartments') ?>	
+	<?php get_template_part('blocks/apartments/b_apartments') ?>
 </section>
 <section id="b_about">
 	<?php get_template_part('blocks/b_about') ?>	
