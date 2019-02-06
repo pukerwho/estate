@@ -9226,6 +9226,10 @@ a {
   margin-bottom: 25px; }
   .b_slider .lSSlideWrapper {
     height: 650px; }
+  .b_slider .lSGallery li {
+    height: 145px; }
+  .b_slider .lSGallery img {
+    height: 100%; }
   .b_slider ul {
     height: 100%;
     list-style: none outside none;
