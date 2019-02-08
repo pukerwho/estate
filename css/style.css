@@ -9752,6 +9752,142 @@ a {
   cursor: -ms-grabbing;
   cursor: grabbing; }
 
+.b_filter {
+  padding: 50px 0px; }
+  .b_filter__heading {
+    font-family: 'Montserrat-Regular';
+    color: #6a6a6e;
+    font-size: 18px;
+    margin-bottom: 20px; }
+  .b_filter__item {
+    margin-bottom: 50px; }
+  .b_filter__btn {
+    font-family: 'Montserrat-Semibold';
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #0045af;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px 0; }
+  .b_filter__range__text {
+    font-size: 18px;
+    color: #6a6a6e;
+    float: left; }
+    .b_filter__range__text:last-of-type {
+      float: right; }
+  .b_filter__range__price, .b_filter__range__square {
+    position: relative; }
+    .b_filter__range__price li, .b_filter__range__square li {
+      position: relative;
+      padding: 3px 20px 3px 25px;
+      cursor: pointer; }
+      .b_filter__range__price li:before, .b_filter__range__square li:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        top: 4px;
+        display: inline-block;
+        margin-right: 9px;
+        width: 17px;
+        height: 17px;
+        background-color: #f4f4f4;
+        border: 1px solid #d5d5d5; }
+    .b_filter__range__price .range-slider:before, .b_filter__range__square .range-slider:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: 0;
+      color: #39c9a9;
+      content: attr(data-currency);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .b_filter__range__price #slider-range, .b_filter__range__square #slider-range {
+      border: none;
+      background-color: #e1e8fa;
+      height: 5px;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      margin-left: 12px;
+      margin-right: 12px;
+      margin-bottom: 20px; }
+    .b_filter__range__price .ui-slider-handle, .b_filter__range__square .ui-slider-handle {
+      -webkit-border-radius: 50% !important;
+      border-radius: 50% !important;
+      background: #0045af !important;
+      border: none !important;
+      top: -12px !important;
+      width: 24px !important;
+      height: 24px !important;
+      outline: none !important; }
+    .b_filter__range__price .ui-slider-range, .b_filter__range__square .ui-slider-range {
+      background: #0045af !important; }
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-image: none; }
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: block;
+  line-height: 1;
+  overflow: hidden; }
+
+select {
+  font-family: 'Montserrat-Semibold';
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 15px;
+  color: #6a6a6e;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #6a6a6e;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+
+select::-ms-expand {
+  display: none; }
+
+/* Arrow */
+.select:after {
+  content: '';
+  width: 14px;
+  height: 9px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 0 1em;
+  background-image: url(../img/arrow-down.png);
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none; }
+
+/* Transition */
+.select:hover::after {
+  color: #f39c12; }
+
+.select::after {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease; }
+
 @media (max-width: 640px) {
   /* COMMON */
   .pc-show {
@@ -9967,6 +10103,11 @@ a {
     .p_tour__more {
       width: 100%;
       position: relative;
-      float: left; } }
+      float: left; }
+
+  .b_filter__range__text {
+    margin-bottom: 50px; }
+  .b_filter__last .b_filter__item {
+    margin-bottom: 0; } }
 
 /*# sourceMappingURL=style.css.map */

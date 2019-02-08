@@ -12,6 +12,12 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
+<?php if (function_exists("pagination")) {
+    pagination($custom_query->max_num_pages);
+} ?>
+
+				
+
 				<?php $big = 999999999; // уникальное число
 				echo paginate_links( array(
 					'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
