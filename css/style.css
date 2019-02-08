@@ -9792,6 +9792,7 @@ a {
     margin-bottom: 50px; }
   .b_filter__btn {
     font-family: 'Montserrat-Semibold';
+    width: 100%;
     color: #ffffff;
     font-size: 18px;
     text-transform: uppercase;

@@ -8,7 +8,7 @@ function crb_post_theme_options() {
   Container::make( 'post_meta', __( 'Дополнительная информация', 'crb' ) )
     ->where( 'post_type', '=', 'apartments' )
     ->add_fields( array(
-      Field::make( 'text', 'crb_apartments_price', __( 'Цена: от ') ),
+      Field::make( 'text', 'crb_apartments_price', __( 'Цена: от ') )->set_attribute( 'type', 'number' ),
       Field::make( 'text', 'crb_apartments_square_price', __( 'Цена за метр квадратный ') ),
       Field::make( 'select', 'crb_apartments_region', __( 'Регион' ) )
 	    ->set_options( array(
@@ -41,7 +41,7 @@ function crb_post_theme_options() {
 	        'Таунхаус' => 'Таунхаус',
 	        'Отель' => 'Отель',
 	      )),
-	    Field::make( 'text', 'crb_apartments_square', __( 'Площадь (От __ м2') ),
+	    Field::make( 'text', 'crb_apartments_square', __( 'Площадь (От __ м2)') )->set_attribute( 'type', 'number' ),
 	    Field::make( 'text', 'crb_apartments_floor', __( 'Этаж ') ),
 	    Field::make( 'text', 'crb_apartments_view', __( 'Вид из окон ') ),
 	    Field::make( 'textarea', 'crb_apartments_map', __( 'Код для Google Maps ') ),

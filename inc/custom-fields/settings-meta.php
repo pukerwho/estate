@@ -19,6 +19,7 @@ function crb_attach_theme_options() {
     ) )
     ->add_tab( __('Контакты'), array(
         Field::make( 'complex', 'crb_contacts', __( 'Контактная информация' ) )
+            ->set_layout( 'tabbed-horizontal')
             ->add_fields( array(
                 Field::make( 'text', 'crb_contacts_office', __('Офис') ),
                 Field::make( 'text', 'crb_contacts_phone', __('Номер телефона') ),

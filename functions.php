@@ -275,3 +275,94 @@ function estate_breadcrumbs() {
 
   }
 } // end of estate_breadcrumbs()
+
+
+
+//Add Ajax
+add_action('wp_head', 'myplugin_ajaxurl');
+function myplugin_ajaxurl() {
+  echo '<script type="text/javascript">
+    var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+  </script>';
+}
+
+//catalog filter
+function b_filter_function(){
+  $filterargs = array(
+    'post_type' => 'apartments',
+    'meta_query' => array(
+      'relation' => 'AND',
+    )
+  );
+  if ($_POST['b_filter_category'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_category',
+      'value'   => $_POST['b_filter_category'],
+      'compare' => '=', 
+    );
+  }
+
+  if ($_POST['b_filter_region'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_region',
+      'value'   => $_POST['b_filter_region'],
+      'compare' => '=', 
+    );
+  }
+
+  if ($_POST['b_filter_type'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_type',
+      'value'   => $_POST['b_filter_type'],
+      'compare' => '=', 
+    );
+  }
+
+  if ($_POST['b_filter_price_min'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_price',
+      'value'   => $_POST['b_filter_price_min'],
+      'compare' => '>=', 
+      'type'    => 'NUMERIC',
+    );
+  }
+
+  if ($_POST['b_filter_price_max'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_price',
+      'value'   => $_POST['b_filter_price_max'],
+      'compare' => '<=', 
+      'type'    => 'NUMERIC',
+    );
+  }
+
+  if ($_POST['b_filter_square_min'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_square',
+      'value'   => $_POST['b_filter_square_min'],
+      'compare' => '>=', 
+      'type'    => 'NUMERIC',
+    );
+  }
+
+  if ($_POST['b_filter_square_max'] != '') { 
+    $filterargs['meta_query'][] = array(
+      'key'     => 'crb_apartments_square',
+      'value'   => $_POST['b_filter_square_max'],
+      'compare' => '<=', 
+      'type'    => 'NUMERIC',
+    );
+  }
+
+  $custom_query_apartments = new WP_Query( $filterargs );
+  if ($custom_query_apartments->have_posts()) : while ($custom_query_apartments->have_posts()) : $custom_query_apartments->the_post();
+    echo '<div class="col-md-3 col-sm-6">';
+    get_template_part( 'blocks/apartments/apartment-card' );
+    echo '</div>';
+  endwhile; 
+  endif;
+  die;
+}
+ 
+add_action('wp_ajax_my_b_filter', 'b_filter_function'); 
+add_action('wp_ajax_nopriv_my_b_filter', 'b_filter_function');
