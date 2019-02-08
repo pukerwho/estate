@@ -9005,6 +9005,36 @@ a {
     background-position: 50%;
     margin: 0px 15px; }
 
+.b_pagination .page-numbers {
+  font-family: 'Montserrat-Semibold';
+  font-size: 18px;
+  color: #6a6a6e;
+  padding: 15px 20px; }
+  .b_pagination .page-numbers:hover {
+    color: #ffffff;
+    background-color: #0045af; }
+.b_pagination .current {
+  color: #232426; }
+  .b_pagination .current:hover {
+    color: #232426;
+    background-color: transparent; }
+.b_pagination .next {
+  background-image: url("../img/pagination_right.png");
+  width: 9px;
+  height: 14px;
+  background-position: 50%;
+  background-repeat: no-repeat; }
+  .b_pagination .next:hover {
+    background-color: transparent; }
+.b_pagination .prev {
+  background-image: url("../img/pagination_left.png");
+  width: 9px;
+  height: 14px;
+  background-position: 50%;
+  background-repeat: no-repeat; }
+  .b_pagination .prev:hover {
+    background-color: transparent; }
+
 .b_header {
   position: relative; }
   .b_header__top {
@@ -9110,13 +9140,12 @@ a {
 .b_apartments {
   background-color: #f0f3fa;
   padding: 75px 0; }
-  .b_apartments .col-sm-6 {
-    margin-bottom: 20px; }
   .b_apartments a:hover {
     text-decoration: none; }
   .b_apartments__item {
     background-color: #ffffff;
-    border: 1px solid transparent; }
+    border: 1px solid transparent;
+    margin-bottom: 50px; }
     .b_apartments__item:hover {
       border: 1px solid #0045af; }
   .b_apartments__img img {
