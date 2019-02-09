@@ -55,7 +55,9 @@
         <div class="mobile-show">
           <div class="b_header__mobile">
             <div class="b_header__mobile__logo">
-              <img src="<?php echo carbon_get_theme_option('crb_header_logo'); ?>" alt="">
+              <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo carbon_get_theme_option('crb_header_logo'); ?>" alt="">
+              </a>
             </div>
             <div class="b_header__mobile__info">
               <?php echo carbon_get_theme_option('crb_header_top_text'); ?>

@@ -10262,6 +10262,13 @@ select::-ms-expand {
     .b_header .toogle-menu:after {
       width: 30px; }
     .b_header .toogle-menu:before {
-      width: 30px; } }
+      width: 30px; }
+
+  .b_welcome__title {
+    font-size: 9vw;
+    line-height: 11vw; }
+  .b_welcome__subtitle {
+    font-size: 6vw;
+    line-height: 8vw; } }
 
 /*# sourceMappingURL=style.css.map */
