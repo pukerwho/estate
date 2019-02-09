@@ -3,7 +3,7 @@
 <div class="p_apartments">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 mobile-padding-0">
 				<?php get_template_part('blocks/apartments/b_slider') ?>
 			</div>
 		</div>

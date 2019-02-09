@@ -9324,7 +9324,8 @@ a {
     padding: 20px;
     -webkit-transform: translateY(-10%);
     -ms-transform: translateY(-10%);
-    transform: translateY(-10%); }
+    transform: translateY(-10%);
+    z-index: 1; }
   .b_slider .lSAction .lSPrev {
     left: 0;
     -webkit-transform: rotate(180deg);
@@ -10017,6 +10018,9 @@ select::-ms-expand {
   .mobile-show {
     display: block; }
 
+  .mobile-padding-0 {
+    padding: 0; }
+
   .container {
     max-width: 610px; }
 
@@ -10157,7 +10161,7 @@ select::-ms-expand {
     position: fixed;
     top: 0;
     left: 0px;
-    background-color: #000000;
+    background-color: #ffffff;
     -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.59);
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.59);
     -webkit-transform: translateX(-110%);
@@ -10196,6 +10200,11 @@ select::-ms-expand {
 
   .b_slider {
     height: 450px; }
+    .b_slider #lightSlider {
+      height: 100% !important; }
+      .b_slider #lightSlider li {
+        height: 100% !important;
+        width: 100% !important; }
     .b_slider .lSSlideWrapper {
       height: 350px; }
     .b_slider .lSGallery li {
@@ -10207,6 +10216,8 @@ select::-ms-expand {
   .b_sidebar__price {
     margin-bottom: 40px; }
 
+  .b_contact__info__item {
+    padding: 10px; }
   .b_contact__title {
     font-size: 24px;
     line-height: 32px; }
@@ -10230,5 +10241,27 @@ select::-ms-expand {
     margin-bottom: 50px; }
   .b_filter__last .b_filter__item {
     margin-bottom: 0; } }
+@media (max-width: 480px) {
+  .b_header__mobile__logo {
+    width: 35%;
+    height: 100%; }
+    .b_header__mobile__logo img {
+      height: 100%;
+      -o-object-fit: contain;
+      object-fit: contain; }
+  .b_header__mobile__info {
+    font-size: 12px;
+    right: 15px;
+    margin-right: 10px;
+    padding-right: 10px; }
+    .b_header__mobile__info a {
+      font-size: 12px; }
+  .b_header .toogle-menu {
+    width: 30px;
+    right: 15px; }
+    .b_header .toogle-menu:after {
+      width: 30px; }
+    .b_header .toogle-menu:before {
+      width: 30px; } }
 
 /*# sourceMappingURL=style.css.map */
