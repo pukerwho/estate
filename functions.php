@@ -360,7 +360,8 @@ function b_filter_function(){
     echo '<div class="col-md-3 col-sm-6">';
     get_template_part( 'blocks/apartments/apartment-card' );
     echo '</div>';
-  endwhile; 
+  endwhile;
+  else: echo 'Ничего не найдено';
   endif;
   die;
 }
