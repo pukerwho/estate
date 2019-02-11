@@ -9227,6 +9227,10 @@ a {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
       margin-bottom: 10px;
       font-family: 'Montserrat-Semibold'; }
       .b_apartments__info__tr:last-child {
@@ -10052,7 +10056,7 @@ select::-ms-expand {
 
 @media (max-width: 1024px) {
   .b_apartments__info {
-    font-size: 13px; }
+    font-size: 1.1vw; }
 
   .p_tour__content {
     height: auto; }
