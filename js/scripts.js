@@ -82,7 +82,7 @@ $('#filter-id').submit(function(){
     data:filter.serialize(), // данные
     type:filter.attr('method'), // тип запроса
     beforeSend:function(xhr){
-      filter.find('button').text('Загружаю...'); // изменяем текст кнопки
+      filter.find('button').text('Ищу..'); // изменяем текст кнопки
     },
     success:function(data){
       console.log(data);
