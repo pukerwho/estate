@@ -9485,6 +9485,7 @@ a {
     position: relative; }
   .p_tour__photo {
     width: 42%;
+    height: 100%;
     float: left; }
     .p_tour__photo img {
       width: 100%;
@@ -10051,8 +10052,19 @@ select::-ms-expand {
 
 @media (max-width: 1024px) {
   .b_apartments__info {
-    font-size: 13px; } }
-@media (max-width: 1024px) and (max-width: 860px) {
+    font-size: 13px; }
+
+  .p_tour__content {
+    height: auto; }
+  .p_tour__more {
+    position: relative;
+    float: right; }
+    .p_tour__more__heading {
+      font-size: 24px;
+      line-height: 32px; }
+    .p_tour__more__button {
+      line-height: 32px; } }
+@media (max-width: 860px) {
   /* COMMON */
   .pc-show {
     display: none; }
@@ -10241,7 +10253,7 @@ select::-ms-expand {
       height: 350px; }
     .b_slider .lSGallery li {
       height: 95px; } }
-@media (max-width: 1024px) and (max-width: 640px) {
+@media (max-width: 640px) {
   .container {
     max-width: 610px; }
 
@@ -10285,7 +10297,7 @@ select::-ms-expand {
     margin-bottom: 50px; }
   .b_filter__last .b_filter__item {
     margin-bottom: 0; } }
-@media (max-width: 1024px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .b_header__mobile__logo {
     width: 35%;
     height: 100%; }
