@@ -357,11 +357,11 @@ function b_filter_function(){
 
   $custom_query_apartments = new WP_Query( $filterargs );
   if ($custom_query_apartments->have_posts()) : while ($custom_query_apartments->have_posts()) : $custom_query_apartments->the_post();
-    echo '<div class="col-md-3 col-sm-6">';
+    echo '<div class="col-lg-3 col-sm-6">';
     get_template_part( 'blocks/apartments/apartment-card' );
     echo '</div>';
   endwhile;
-  else: echo 'Ничего не найдено';
+  else: echo '<div class="col-md-12">Ничего не найдено</div>';
   endif;
   die;
 }
