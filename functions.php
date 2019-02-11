@@ -368,3 +368,19 @@ function b_filter_function(){
  
 add_action('wp_ajax_my_b_filter', 'b_filter_function'); 
 add_action('wp_ajax_nopriv_my_b_filter', 'b_filter_function');
+
+
+function my_login_logo() { ?>
+  <style type="text/css">
+    #login h1 a, .login h1 a {
+      background-image: url(<?php bloginfo('template_url') ?>/img/logo-estate.png);
+      width: 100%;
+      height: 53px;
+      background-size: auto;
+      padding: 20px 0px;
+      background-color: #0045af;
+      background-position: center;
+    }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );

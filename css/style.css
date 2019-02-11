@@ -9241,37 +9241,39 @@ a {
     .p_apartments__map iframe {
       height: 100%; }
 
-.b_sidebar__box {
-  background-color: #ffffff;
-  padding: 30px;
-  margin-bottom: 30px; }
-.b_sidebar__row {
-  font-size: 18px;
-  border-bottom: 1px solid #e1e8fa;
-  padding: 20px 0; }
-  .b_sidebar__row:first-child {
-    padding: 0 0 20px 0; }
-  .b_sidebar__row:last-child {
-    border-bottom: none;
-    padding: 20px 0 0 0; }
-.b_sidebar__key {
-  color: #6a6a6e; }
-.b_sidebar__value {
-  font-family: 'Montserrat-Semibold';
-  color: #232426; }
-.b_sidebar__price {
-  font-family: 'Montserrat-Bold';
-  color: #ffffff;
-  background-color: #0045af;
-  font-size: 36px;
-  line-height: 42px;
-  padding: 30px; }
-  .b_sidebar__price__heading {
-    margin-bottom: 10px; }
-  .b_sidebar__price__square {
-    font-family: 'Montserrat-Regular';
+.b_sidebar {
+  line-height: 24px; }
+  .b_sidebar__box {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px; }
+  .b_sidebar__row {
     font-size: 18px;
-    line-height: 24px; }
+    border-bottom: 1px solid #e1e8fa;
+    padding: 20px 0; }
+    .b_sidebar__row:first-child {
+      padding: 0 0 20px 0; }
+    .b_sidebar__row:last-child {
+      border-bottom: none;
+      padding: 20px 0 0 0; }
+  .b_sidebar__key {
+    color: #6a6a6e; }
+  .b_sidebar__value {
+    font-family: 'Montserrat-Semibold';
+    color: #232426; }
+  .b_sidebar__price {
+    font-family: 'Montserrat-Bold';
+    color: #ffffff;
+    background-color: #0045af;
+    font-size: 36px;
+    line-height: 42px;
+    padding: 30px; }
+    .b_sidebar__price__heading {
+      margin-bottom: 10px; }
+    .b_sidebar__price__square {
+      font-family: 'Montserrat-Regular';
+      font-size: 18px;
+      line-height: 24px; }
 
 .b_content {
   font-size: 18px;
@@ -10047,7 +10049,7 @@ select::-ms-expand {
   -o-transition: .25s all ease;
   transition: .25s all ease; }
 
-@media (max-width: 640px) {
+@media (max-width: 860px) {
   /* COMMON */
   .pc-show {
     display: none; }
@@ -10057,9 +10059,6 @@ select::-ms-expand {
 
   .mobile-padding-0 {
     padding: 0; }
-
-  .container {
-    max-width: 610px; }
 
   .b_header__top, .b_header__main {
     display: none; }
@@ -10222,18 +10221,10 @@ select::-ms-expand {
     transition: transform 300ms ease;
     transition: transform 300ms ease, -webkit-transform 300ms ease; }
     .slide-menu_active li {
-      padding-bottom: 1rem; }
+      padding-bottom: 3rem;
+      margin-right: 0 !important; }
     .slide-menu_active a {
       font-size: 2rem; }
-
-  .b_welcome {
-    height: 350px; }
-    .b_welcome__title {
-      font-size: 38px;
-      line-height: 46px; }
-    .b_welcome__subtitle {
-      font-size: 24px;
-      line-height: 32px; }
 
   .b_slider {
     height: 450px; }
@@ -10245,7 +10236,19 @@ select::-ms-expand {
     .b_slider .lSSlideWrapper {
       height: 350px; }
     .b_slider .lSGallery li {
-      height: 95px; }
+      height: 95px; } }
+@media (max-width: 640px) {
+  .container {
+    max-width: 610px; }
+
+  .b_welcome {
+    height: 350px; }
+    .b_welcome__title {
+      font-size: 38px;
+      line-height: 46px; }
+    .b_welcome__subtitle {
+      font-size: 24px;
+      line-height: 32px; }
 
   .p_apartments .container {
     padding-bottom: 40px; }

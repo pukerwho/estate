@@ -12,7 +12,7 @@
 	        $custom_query = new WP_Query( $custom_query_args );
 	        
 	        if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
-	        	<div class="col-md-3 col-sm-6">
+	        	<div class="col-lg-3 col-sm-6">
 	        		<?php get_template_part('blocks/apartments/apartment-card') ?>
 	        	</div>
 		    <?php endwhile; endif; wp_reset_postdata(); ?>

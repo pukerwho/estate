@@ -11,14 +11,16 @@ $('.slide-menu a').on('click', function(e){
   $('.slide-menu').removeClass('slide-menu_active');
 })
 
-$(window).scroll(function(){
-  var h_scroll = $(this).scrollTop();
-  if (h_scroll > 56) {
-    $('header').addClass('header__fixed')
-  } else {
-    $('header').removeClass('header__fixed')
-  }
-})
+//Плавный скролл
+$(document).on('click', 'header a[href^="#"]', function (event) {
+  event.preventDefault();
+  var target = $($.attr(this, 'href'));
+  console.log(target.offset());
+  var targetScroll =  target.offset().top - 50
+  $('html, body').animate({
+      scrollTop: targetScroll
+  }, 500);
+});
 
 if ($(document).width() > 640) {
   $('#lightSlider').lightSlider({
