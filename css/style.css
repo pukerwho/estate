@@ -10256,7 +10256,10 @@ select::-ms-expand {
     .b_slider .lSSlideWrapper {
       height: 350px; }
     .b_slider .lSGallery li {
-      height: 95px; } }
+      height: 95px; }
+
+  .b_apartments__info {
+    font-size: 2.5vw; } }
 @media (max-width: 640px) {
   .container {
     max-width: 610px; }
@@ -10300,7 +10303,10 @@ select::-ms-expand {
   .b_filter__range__text {
     margin-bottom: 50px; }
   .b_filter__last .b_filter__item {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+
+  .b_apartments__info {
+    font-size: 4.5vw; } }
 @media (max-width: 480px) {
   .b_header__mobile__logo {
     width: 35%;
