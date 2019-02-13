@@ -38,4 +38,7 @@
 			<span class="b_sidebar__price__square">/ <?php echo carbon_get_the_post_meta('crb_apartments_square_price'); ?> &euro; м<sup>2</sup></span>
 		</div>
 	</div>
+	<div class="b_sidebar__button" data-toggle="modal" data-target="#formModal">
+		<?php _e('Узнать подробнее') ?>
+	</div>
 </div>

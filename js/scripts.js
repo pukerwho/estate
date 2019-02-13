@@ -42,7 +42,6 @@ if ($(document).width() < 640) {
   })
 };
 
-
 $(".b_filter__range__square #slider-range").slider({
   range: true, 
   min: 20,

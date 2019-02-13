@@ -61,8 +61,8 @@ function create_post_type() {
     register_post_type( 'apartments',
         array(
           'labels' => array(
-            'name' => __( 'Apartments' ),
-            'singular_name' => __( 'Apartment' )
+            'name' => __( 'Каталог объектов недвижимости' ),
+            'singular_name' => __( 'Объект' )
           ),
           'public' => true,
           'has_archive' => true,
